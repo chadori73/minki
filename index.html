@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>노인 의료·돌봄 통합지원 - 자미한의원</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+
+  :root {
+    --orange: #F5A623;
+    --orange-dark: #E08A00;
+    --orange-light: #FFF3D6;
+    --green: #4A7C59;
+    --green-light: #E8F5ED;
+    --gray-light: #F8F8F8;
+    --text-dark: #1A1A1A;
+    --text-mid: #444;
+    --white: #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: #f5f5f0;
+    color: var(--text-dark);
+    line-height: 1.6;
+  }
+
+  .page {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    box-shadow: 0 4px 40px rgba(0,0,0,0.12);
+  }
+
+  /* ===== HERO SECTION ===== */
+  .hero {
+    background: linear-gradient(135deg, #fff8ec 0%, #fff3d0 100%);
+    padding: 40px 40px 30px;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 4px solid var(--orange);
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 220px; height: 220px;
+    border-radius: 50%;
+    background: rgba(245,166,35,0.12);
+  }
+
+  .badge {
+    display: inline-block;
+    background: var(--orange);
+    color: white;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 5px 14px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+    letter-spacing: 0.5px;
+  }
+
+  .hero-title {
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 1.3;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+  }
+
+  .hero-title span {
+    color: var(--orange);
+  }
+
+  .hero-subtitle {
+    font-size: 15px;
+    color: var(--text-mid);
+    margin-bottom: 20px;
+    font-weight: 400;
+  }
+
+  .jami-notice {
+    background: linear-gradient(135deg, var(--orange), var(--orange-dark));
+    color: white;
+    border-radius: 12px;
+    padding: 16px 20px;
+    font-size: 15px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    box-shadow: 0 4px 16px rgba(245,166,35,0.4);
+  }
+
+  .jami-notice .icon {
+    font-size: 24px;
+  }
+
+  /* ===== TAGS ROW ===== */
+  .tags-row {
+    display: flex;
+    gap: 10px;
+    padding: 20px 40px;
+    background: var(--orange);
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    background: white;
+    color: var(--orange-dark);
+    font-weight: 700;
+    font-size: 14px;
+    padding: 7px 18px;
+    border-radius: 30px;
+  }
+
+  /* ===== INFO BOXES ===== */
+  .section {
+    padding: 32px 40px;
+  }
+
+  .section-title {
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .section-title::before {
+    content: '';
+    display: inline-block;
+    width: 5px;
+    height: 22px;
+    background: var(--orange);
+    border-radius: 3px;
+  }
+
+  /* ===== WHAT IS IT ===== */
+  .info-card {
+    background: var(--orange-light);
+    border-left: 5px solid var(--orange);
+    border-radius: 0 12px 12px 0;
+    padding: 20px 24px;
+    margin-bottom: 16px;
+  }
+
+  .info-card h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--orange-dark);
+    margin-bottom: 8px;
+  }
+
+  .info-card p {
+    font-size: 14px;
+    color: var(--text-mid);
+    line-height: 1.7;
+  }
+
+  /* ===== SERVICES GRID ===== */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .service-box {
+    background: var(--gray-light);
+    border-radius: 12px;
+    padding: 18px;
+    border-top: 4px solid var(--orange);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .service-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  }
+
+  .service-box .s-icon {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+
+  .service-box h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--orange-dark);
+    margin-bottom: 6px;
+  }
+
+  .service-box p {
+    font-size: 13px;
+    color: var(--text-mid);
+    line-height: 1.6;
+  }
+
+  /* ===== TABLE ===== */
+  .table-wrap {
+    overflow-x: auto;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+
+  table thead tr {
+    background: var(--orange);
+    color: white;
+  }
+
+  table thead th {
+    padding: 12px 14px;
+    font-weight: 700;
+    text-align: left;
+    font-size: 14px;
+  }
+
+  table tbody tr:nth-child(even) {
+    background: #fafafa;
+  }
+
+  table tbody tr:hover {
+    background: var(--orange-light);
+  }
+
+  table td {
+    padding: 11px 14px;
+    border-bottom: 1px solid #eeeeee;
+    vertical-align: top;
+    line-height: 1.6;
+  }
+
+  table td:first-child {
+    font-weight: 700;
+    color: var(--orange-dark);
+    white-space: nowrap;
+    width: 100px;
+  }
+
+  .star {
+    color: var(--orange);
+    font-weight: 700;
+  }
+
+  /* ===== CONTACT ===== */
+  .contact-section {
+    background: var(--green-light);
+    border-top: 4px solid var(--green);
+    padding: 28px 40px;
+  }
+
+  .contact-title {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--green);
+    margin-bottom: 16px;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .contact-item {
+    background: white;
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-size: 13px;
+    border-left: 3px solid var(--green);
+  }
+
+  .contact-item strong {
+    display: block;
+    font-size: 12px;
+    color: var(--green);
+    margin-bottom: 3px;
+  }
+
+  .contact-item span {
+    font-weight: 700;
+    color: var(--text-dark);
+  }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    background: #1a1a1a;
+    color: #aaa;
+    text-align: center;
+    padding: 18px;
+    font-size: 12px;
+  }
+
+  .footer a {
+    color: var(--orange);
+    text-decoration: none;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 600px) {
+    .hero { padding: 28px 20px 24px; }
+    .hero-title { font-size: 24px; }
+    .section { padding: 24px 20px; }
+    .tags-row { padding: 16px 20px; }
+    .services-grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .contact-section { padding: 24px 20px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="badge">보건복지부 · 경기도 · 안산시</div>
+    <h1 class="hero-title">
+      노인 <span>의료·돌봄</span><br>통합지원 서비스
+    </h1>
+    <p class="hero-subtitle">살던 곳에서 건강하게, 지역사회 중심 돌봄</p>
+
+    <!-- 자미한의원 참여 안내 -->
+    <div class="jami-notice">
+      <span class="icon">🏥</span>
+      <div>
+        <div style="font-size:13px; font-weight:400; opacity:0.9; margin-bottom:2px;">한의사 방문진료 참여 기관</div>
+        <div>자미한의원은 한의사 방문진료에 참여하고 있습니다!</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAGS -->
+  <div class="tags-row">
+    <div class="tag">🏠 재가 중심</div>
+    <div class="tag">👴 65세 이상</div>
+    <div class="tag">💊 의료 + 돌봄 연계</div>
+    <div class="tag">📋 통합판정조사</div>
+    <div class="tag">📞 무료 상담</div>
+  </div>
+
+  <!-- 서비스란? -->
+  <div class="section">
+    <div class="section-title">노인 의료·돌봄 통합지원이란?</div>
+
+    <div class="info-card">
+      <h3>🎯 사업 목적</h3>
+      <p>
+        의료·요양·돌봄·주거 등 지역의 다양한 자원을 연계하여<br>
+        어르신이 살던 곳(지역사회)에서 건강하게 생활할 수 있도록<br>
+        <strong>통합적으로 지원하는 서비스</strong>입니다.
+      </p>
+    </div>
+
+    <div class="info-card">
+      <h3>👥 신청 대상</h3>
+      <p>
+        만 65세 이상 어르신 중 <strong>의료·돌봄 서비스가 필요한 분</strong><br>
+        (노인장기요양보험 등급자 포함, 10등급 이내 대상자)<br>
+        본인 또는 가족이 읍·면·동 주민센터에 신청
+      </p>
+    </div>
+  </div>
+
+  <!-- 서비스 내용 -->
+  <div class="section" style="padding-top:0;">
+    <div class="section-title">주요 서비스 내용</div>
+    <div class="services-grid">
+
+      <div class="service-box">
+        <div class="s-icon">🏥</div>
+        <h4>방문진료</h4>
+        <p>의사·한의사가 거동이 불편한 어르신 가정을 직접 방문하여 진료<br>
+        <strong>✅ 자미한의원 참여 중</strong></p>
+      </div>
+
+      <div class="service-box">
+        <div class="s-icon">💊</div>
+        <h4>방문약료</h4>
+        <p>약사가 가정을 방문하여 복약지도 및 약물 관리 지원</p>
+      </div>
+
+      <div class="service-box">
+        <div class="s-icon">🤝</div>
+        <h4>사회서비스</h4>
+        <p>돌봄·식사·이동 지원 등 일상생활 필요 서비스 연계</p>
+      </div>
+
+      <div class="service-box">
+        <div class="s-icon">🔗</div>
+        <h4>지역자원 연계</h4>
+        <p>지역 내 복지·보건 서비스를 통합 코디네이터가 연계·조정</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 이용 구분 표 -->
+  <div class="section" style="padding-top:0;">
+    <div class="section-title">서비스 이용 구분</div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>구분</th>
+            <th>일반형</th>
+            <th>복합형</th>
+            <th>집중형</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>대상</td>
+            <td>돌봄 서비스 필요자</td>
+            <td>의료+돌봄 복합 필요자</td>
+            <td>집중 의료·돌봄 필요자</td>
+          </tr>
+          <tr>
+            <td>주요 서비스</td>
+            <td>재가 돌봄·사회서비스 연계</td>
+            <td>방문진료·방문약료·돌봄 연계</td>
+            <td>다학제 팀 방문, 통합 관리</td>
+          </tr>
+          <tr>
+            <td>특이사항</td>
+            <td></td>
+            <td><span class="star">★</span> 방문한의사 진료 포함<br><span class="star">★</span> 복약지도 포함</td>
+            <td><span class="star">★</span> 집중 사례관리<br><span class="star">★</span> 다양한 전문직 연계</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 신청 방법 -->
+  <div class="section" style="padding-top:0;">
+    <div class="section-title">신청 방법</div>
+    <div style="display:flex; gap:0; flex-wrap:wrap;">
+      <div style="flex:1; min-width:200px; background:#fff8ec; border-radius:12px; padding:18px; margin:4px; border:1px solid #f5d080;">
+        <div style="font-size:22px; margin-bottom:8px;">🏢</div>
+        <div style="font-weight:700; margin-bottom:4px; color:#e08a00;">읍·면·동 주민센터</div>
+        <div style="font-size:13px; color:#555;">방문 또는 전화 신청</div>
+      </div>
+      <div style="flex:1; min-width:200px; background:#fff8ec; border-radius:12px; padding:18px; margin:4px; border:1px solid #f5d080;">
+        <div style="font-size:22px; margin-bottom:8px;">📞</div>
+        <div style="font-weight:700; margin-bottom:4px; color:#e08a00;">노인 통합지원센터</div>
+        <div style="font-size:13px; color:#555;">031-481-5600 계열 번호</div>
+      </div>
+      <div style="flex:1; min-width:200px; background:#fff8ec; border-radius:12px; padding:18px; margin:4px; border:1px solid #f5d080;">
+        <div style="font-size:22px; margin-bottom:8px;">🌐</div>
+        <div style="font-weight:700; margin-bottom:4px; color:#e08a00;">온라인</div>
+        <div style="font-size:13px; color:#555;">mohw.go.kr/integratedcare</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 연락처 -->
+  <div class="contact-section">
+    <div class="contact-title">📞 안산시 관련 문의처</div>
+    <div class="contact-grid">
+      <div class="contact-item">
+        <strong>안산시 통합지원센터 (단원구)</strong>
+        <span>031-481-5601 ~ 5612</span>
+      </div>
+      <div class="contact-item">
+        <strong>안산시 통합지원센터 (상록구)</strong>
+        <span>031-481-6601 ~ 6612</span>
+      </div>
+      <div class="contact-item">
+        <strong>보건복지부 대표전화</strong>
+        <span>☎ 129</span>
+      </div>
+      <div class="contact-item">
+        <strong>노인장기요양보험</strong>
+        <span>☎ 1577-1000</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 자미한의원 강조 -->
+  <div style="background: linear-gradient(135deg, #F5A623, #E08A00); padding: 28px 40px; text-align:center; color:white;">
+    <div style="font-size:28px; margin-bottom:10px;">🏥</div>
+    <div style="font-size:20px; font-weight:900; margin-bottom:8px;">자미한의원</div>
+    <div style="font-size:15px; font-weight:500; opacity:0.95; margin-bottom:6px;">
+      노인 의료·돌봄 통합지원 <strong>한의사 방문진료</strong> 참여 기관
+    </div>
+    <div style="font-size:13px; opacity:0.85;">
+      거동이 불편하신 어르신의 가정을 직접 방문하여 한의과 진료를 제공합니다
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    보건복지부 · 경기도 · 안산시 | 노인 의료·돌봄 통합지원 사업 안내<br>
+    문의: <a href="https://mohw.go.kr/integratedcare">mohw.go.kr/integratedcare</a>
+  </div>
+
+</div>
+</body>
+</html>
